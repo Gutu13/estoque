@@ -1,0 +1,51 @@
+var online = false;
+var produtodescri = false;
+
+  if(localstorage.getitem('acesso') = true{
+      online = true;
+      console.log('inserido');
+}
+     
+   if(online!= true){
+      alert('usuario não cadastrado');
+      window.location.href = 'login.html';
+}
+
+  function controledeproduto(){
+       exibirproduto = !exibirproduto;
+       let form = document.getElementByID('formProduto');
+       
+       if(exibirproduto){
+            form.style.display = 'block';
+            }
+            else{
+                form.style.display = 'nome';
+                }
+ }
+ 
+ function cadastroProduto(){
+      let produtoDescricao = document.getElementById('produtoDescricao');
+      let produtoQuantidade = document.getElementById('produtoQuantidade');
+      
+      let dados = localstorage.getItem('dadosProduto');
+      
+      if(dados == null){
+          localStorage.setItem('dadosProduto', '[]');
+          dados = [];
+      }
+   let auxRegistro ={
+        nome: produtoDescricao.value(),
+        quantidade: produtoQuantidade.value()
+        
+     }
+   
+   dados.push(auxRegistro);
+   
+   localStorage.setItem('dadosProduto', JSON.stringfy(dados));
+   
+   produtoDescricao.value = '';
+   produtoQuantidade.value = '';
+      
+  }
+  
+  
