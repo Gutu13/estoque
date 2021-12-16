@@ -20,32 +20,10 @@ var produtodescri = false;
             }
             else{
                 form.style.display = 'nome';
-                }
- }
- 
- function cadastroProduto(){
-      let produtoDescricao = document.getElementById('produtoDescricao');
-      let produtoQuantidade = document.getElementById('produtoQuantidade');
-      
-      let dados = localstorage.getItem('dadosProduto');
-      
-      if(dados == null){
-          localStorage.setItem('dadosProduto', '[]');
-          dados = [];
+                } 
       }
-   let auxRegistro ={
-        nome: produtoDescricao.value(),
-        quantidade: produtoQuantidade.value()
-        
-     }
-   
-   dados.push(auxRegistro);
-   
-   localStorage.setItem('dadosProduto', JSON.stringfy(dados));
-   
-   produtoDescricao.value = '';
-   produtoQuantidade.value = '';
+ 
       
-  }
+}
   
   
